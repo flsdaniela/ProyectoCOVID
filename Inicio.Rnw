@@ -1,0 +1,44 @@
+%% todo documento siempre empieza con \documentclass
+%% los comandos de Latex siempre son:
+%% \comando[opciones]{argumentos}
+\documentclass[a4paper, 11 pt]{article}
+%% entre document y begin, se llama preamble
+%% se puede poner todo lo que quieras que sea el documento y esto no se ve en el documento final
+%Caracteres especiales LaTeX: 
+% \ % $ & {} #
+%% para usarlos: \\ \% \$....
+
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+
+\author{Daniela F.}
+\title{Reproducible Research with R and \LaTeX{}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Donald Knuth set the foundations of literate programming paradigm. This paradigm is the cornerstone of reproducible research in R, with packages such as knitr. In this article, we will explore the capabilities of these tools. 
+\end{abstract}
+
+\section{Foundations of Reproducible Research}
+Reproducible research allows to weave natural language such as english and snipets of code of certain programming language (such as R).
+
+\begin{equation}
+        f(\omega) = \int_{-\infty}^{\infty} f(x) e^{-2\pi ix\omega} dx
+\end{equation}
+
+\section{My First Code}
+<<MyPlot, echo= FALSE>>=
+x <- rnorm(200, 10, 2)
+y <- 3.5*x + rnorm(200, 0, 1)
+plot(x, y)
+abline(lm(y ~ x))
+@
+\end{document}
